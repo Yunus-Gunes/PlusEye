@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PlusEye</string>
+    <string name="Information_permission">Obtaining related permissions: Camera permissions failed. Some functions cannot be used properly. You need to manually grant permissions on the settings page. </string>
+    <string name="go_authorization">Go Authorization</string>
+    <string name="text">Text</string>
+    <string name="document">Document</string>
+    <string name="image_scene">Image Scene Dect</string>
+    <string name="product_search">Product Search</string>
+    <string name="object">Object</string>
+</resources>

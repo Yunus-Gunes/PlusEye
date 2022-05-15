@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<FindBugsFilter>
+
+    <Match>
+        <Class
+            name="tr.gov.btk.hms.pluseye.language.textembedding.TextEmbeddingAnalyseActivity" />
+    </Match>
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.body.face3d.Still3DFaceAnalyseActivity" />
+        <Or>
+            <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON" />
+            <Bug pattern="SBSC_USE_STRINGBUFFER_CONCATENATION" />
+        </Or>
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.body.handgesture.StillHandGestureAnalyseActivity" />
+        <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.body.handkeypoint.StillHandKeyPointAnalyseActivity" />
+        <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.custommodel.CustomModelActivity" />
+        <Or>
+            <Bug pattern="SE_NO_SERIALVERSIONID" />
+            <Bug pattern="OS_OPEN_STREAM_EXCEPTION_PATH" />
+            <Bug pattern="SE_COMPARATOR_SHOULD_BE_SERIALIZABLE" />
+        </Or>
+    </Match>
+
+    <Match>
+        <Class
+            name="tr.gov.btk.hms.pluseye.image.classification.ImageClassificationAnalyseActivity" />
+    </Match>
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.image.landmark.ImageLandmarkAnalyseActivity" />
+    </Match>
+    <Match>
+        <Class
+            name="tr.gov.btk.hms.pluseye.image.scenedetection.SenceDetectionStillAnalyseActivity" />
+    </Match>
+
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.text.document.ImageDocumentAnalyseActivity" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.text.generalCard.PassCardProcess" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.text.text.ImageTextAnalyseActivity" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.voice.sounddect.SoundDectActivity" />
+        <Or>
+            <Bug pattern="SBSC_USE_STRINGBUFFER_CONCATENATION" />
+        </Or>
+
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.voice.translate.TranslatorActivity" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.voice.tts.TtsOnlineModeActivity" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.voice.tts.TtsOfflineModeActivity" />
+    </Match>
+
+    <Match>
+        <Class
+            name="tr.gov.btk.hms.pluseye.body.livenessdetection.LiveLivenessDetectionActivity" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.image.productvisionsearch.ProductFragment" />
+    </Match>
+
+    <Match>
+        <Class name="tr.gov.btk.hms.pluseye.voice.aft.AftAnalyseActivity" />
+        <Or>
+            <Bug pattern="LI_LAZY_INIT_STATIC" />
+        </Or>
+    </Match>
+
+</FindBugsFilter>

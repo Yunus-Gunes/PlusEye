@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".object.LiveObjectAnalyseActivity">
+
+    <tr.gov.btk.hms.pluseye.camera.LensEnginePreview
+        android:id="@+id/object_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <tr.gov.btk.hms.pluseye.camera.GraphicOverlay
+            android:id="@+id/object_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </tr.gov.btk.hms.pluseye.camera.LensEnginePreview>
+
+
+    <Button
+        android:id="@+id/detect_start"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_blue"
+        android:text="restart"
+        android:textColor="@color/emui_color_gray_7"></Button>
+</RelativeLayout>
