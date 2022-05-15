@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import tr.gov.btk.hms.pluseye.object.LiveObjectAnalyseActivity;
 
+//Başlat Tuşu 
+//Basıldığında uygulama açılacak
 public class ChooseActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override

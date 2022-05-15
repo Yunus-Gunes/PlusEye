@@ -16,6 +16,7 @@ public class MLObjectGraphic extends GraphicOverlay.Graphic {
     private final Paint boxPaint;
     private final Paint textPaint;
 
+    //Objelerin Tespit ederken şekil içine alınması
     MLObjectGraphic(GraphicOverlay overlay, MLObject object) {
         super(overlay);
 
@@ -44,6 +45,7 @@ public class MLObjectGraphic extends GraphicOverlay.Graphic {
         canvas.drawText(MLObjectGraphic.getCategoryName(this.object.getTypeIdentity()), rect.left, rect.bottom, this.textPaint);
     }
 
+    //Tespit edilen objelerin isimleri
     private static String getCategoryName(int category) {
         switch (category) {
             case MLObject.TYPE_OTHER:

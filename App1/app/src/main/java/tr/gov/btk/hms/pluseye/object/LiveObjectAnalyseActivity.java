@@ -86,7 +86,7 @@ public class LiveObjectAnalyseActivity extends AppCompatActivity implements View
 
 
 
-        // Checking Camera Permissions
+        // Kamera izinleri kontrol
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             this.createLensEngine();
         } else {
@@ -126,7 +126,7 @@ public class LiveObjectAnalyseActivity extends AppCompatActivity implements View
         }
     }
 
-    // Permission application callback.
+    // İzin kontrol.
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
         @NonNull int[] grantResults) {
@@ -151,8 +151,7 @@ public class LiveObjectAnalyseActivity extends AppCompatActivity implements View
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    // When you need to implement a scene that stops after recognizing specific content
-    // and continues to recognize after finishing processing, refer to this code
+    //Belirli içeriği tanıdıktan sonra duran, sonra tanımaya devam eden bir sahne uygulanması
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -230,6 +229,7 @@ public class LiveObjectAnalyseActivity extends AppCompatActivity implements View
                     LiveObjectAnalyseActivity.this.mOverlay.add(graphic);
                 }
 
+                //Belirtilen objeler tespit edilirse kendi kaydettiğim seslerle seslendirme yapan bölüm                
                 for (int i = 0; i < objectSparseArray.size(); i++) {
                     if (objectSparseArray.valueAt(i).getTypeIdentity() == MLObject.TYPE_PLANT) {
 
@@ -282,7 +282,7 @@ public class LiveObjectAnalyseActivity extends AppCompatActivity implements View
         }
     }
 
-    // Check the permissions required by the SDK.
+    // SDK'nın gerektirdiği izinleri kontrol edin
     private void checkPermission() {
         if (Build.VERSION.SDK_INT >= 23 && !isPermissionRequested) {
             isPermissionRequested = true;
@@ -309,7 +309,7 @@ public class LiveObjectAnalyseActivity extends AppCompatActivity implements View
                 .setPositiveButton(R.string.go_authorization, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Guide the user to the setting page for manual authorization.
+                        //Kullanıcıyı manuel yetkilendirme için ayar sayfasına yönlendirin.
                         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                         Uri uri = Uri.fromParts("package", getApplicationContext().getPackageName(), null);
                         intent.setData(uri);
@@ -319,7 +319,7 @@ public class LiveObjectAnalyseActivity extends AppCompatActivity implements View
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Instruct the user to perform manual authorization. The permission request fails.
+                        //Kullanıcıya manuel yetkilendirme yapmasını söyleyin. İzin isteği başarısız olur.
                         finish();
                     }
                 }).setOnCancelListener(dialogInterface);
@@ -330,7 +330,7 @@ public class LiveObjectAnalyseActivity extends AppCompatActivity implements View
     static DialogInterface.OnCancelListener  dialogInterface = new DialogInterface.OnCancelListener() {
         @Override
         public void onCancel(DialogInterface dialog) {
-            //Instruct the user to perform manual authorization. The permission request fails.
+            //Kullanıcıya manuel yetkilendirme yapmasını söyleyin. İzin isteği başarısız olur.
         }
     };
 }
